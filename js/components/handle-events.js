@@ -6,10 +6,10 @@ AFRAME.registerComponent('handle-events', {
       const pel = document.querySelector('#peluches');
       const cross_pel = document.querySelector('#cross-peluches');
       const text_pel = document.querySelector('#text-peluches');
-      const tel = document.querySelector('#television');
-      const cross_tel = document.querySelector('#cross-television');
-      const desc_tel = document.querySelector('#descripcion-television');
-      const text_tel = document.querySelector('#text-television');
+      const bici = document.querySelector('#bicicleta');
+      const cross_bici = document.querySelector('#cross-bicicleta');
+      const desc_bici = document.querySelector('#descripcion-bicicleta');
+      const text_bici = document.querySelector('#text-bicicleta');
     //   el.addEventListener('mouseenter', function () {
     //     el.setAttribute('color', '#24CAFF');  
     //   });
@@ -18,11 +18,11 @@ AFRAME.registerComponent('handle-events', {
     //   });
       el.addEventListener('click', function () {
           switch (el.id) {
-              case "television":
-                tel.setAttribute('visible', false);
-                desc_tel.setAttribute('visible', true);
-                cross_tel.setAttribute('visible', true);
-                text_tel.setAttribute('visible', true);
+              case "bicicleta":
+                bici.setAttribute('visible', false);
+                desc_bici.setAttribute('visible', true);
+                cross_bici.setAttribute('visible', true);
+                text_bici.setAttribute('visible', true);
                   break;
               case "peluches":
                   pel.setAttribute('visible', false);
@@ -36,11 +36,11 @@ AFRAME.registerComponent('handle-events', {
                   cross_pel.setAttribute('visible', false);
                   text_pel.setAttribute('visible', false);
                   break;
-              case "cross-television":
-                  tel.setAttribute('visible', true);
-                  desc_tel.setAttribute('visible', false);
-                  cross_tel.setAttribute('visible', false);
-                  text_tel.setAttribute('visible', false);
+              case "cross-bicicleta":
+                  bici.setAttribute('visible', true);
+                  desc_bici.setAttribute('visible', false);
+                  cross_bici.setAttribute('visible', false);
+                  text_bici.setAttribute('visible', false);
                   break;
               default:
                   break;

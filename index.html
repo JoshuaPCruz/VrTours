@@ -10,15 +10,26 @@
   </head>
   <body>
     <a-scene>
-      <a-sky src="assets/images/output.jpg" rotation="0 -130 0"></a-sky>
-      <a-text font="kelsonsans" value="Casa de casas" width="6" position="-2.5 0.25 -1.5"
-              rotation="0 15 0"></a-text>
+              <a-sky 
+              src="assets/images/firstShot.jpg" 
+              rotation="0 -130 0"></a-sky>
+              <a-obj-model 
+              src="assets/assembled.obj" 
+              mtl="assets/assembled.mtl" 
+              position="-3.192 1.097 2.639"
+              scale="0.70 0.70 0.70"></a-obj-model>
+              <a-text 
+              font="kelsonsans" 
+              value="Parque Salesiano" 
+              width="6" 
+              position="-1.362 0.728 -2.992"
+              rotation="13.636 15.350 3.418"></a-text>
               <a-entity 
               id="peluches" 
               material="color: white; emissive: #ffffff;"
               geometry="primitive: circle; radius: .2;" 
-              position="-1.5 2.25 -1.5" 
-              rotation="0 15 0" 
+              position="3.706 2.435 -4.340" 
+              rotation="0 -48.124 0" 
               handle-events></a-entity>
               <a-image 
               visible="false" 
@@ -48,45 +59,68 @@
               rotation="0 -3.847 0" 
               handle-events></a-entity>
 
-              <!-- Circulo Televisión -->
+              <!-- Circulo Bicicleta -->
               <a-entity 
-              id="television" 
+              id="bicicleta" 
               material="color: white; emissive: #ffffff;"
               geometry="primitive: circle; radius: .2" 
               position="-1.359 1.423 2.820" 
               rotation="0 165 0" 
               handle-events></a-entity>
-              <!-- Plane Televisión -->
-              <a-entity 
-              visible="false" 
-              id="descripcion-television" 
-              material="color: red; emissive: #ffffff;" 
+              <!-- Plane Fondo Bicicleta -->
+              <a-entity
+              id="fondo-bicicleta" 
+              material="color: red; emissive: #05f579;" 
               geometry="primitive: plane; height: 1; width:2" 
-              position="-1.359 1.423 2.840" 
-              rotation="0 165 0" 
+              position="-3.413 1.433 3.423" 
+              rotation="0 125.743 0" 
+              handle-events></a-entity>
+              <!-- Text Bicicleta -->
+              <a-text
+              font="kelsonsans" 
+              value="Curso \nde \nbicicleta" 
+              width="5"
+              align="center"
+              color="#36a527" 
+              position="-2.532 1.470 2.933" 
+              rotation="0 130.449 0"
+              transparent="false"></a-text>
+
+              <!-- Plane Info Bicicleta -->
+              <a-entity
+              visible="false"
+              id="descripcion-bicicleta" 
+              material="color: red; emissive: white;" 
+              geometry="primitive: plane; height: 1; width:2" 
+              position="-1.618 1.433 4.928" 
+              rotation="0 150.06 0" 
               handle-events></a-entity>
               <a-text
-              id="text-television"
+              id="text-bicicleta"
               visible="false" 
               font="kelsonsans" 
               value="Television" 
               width="5"
               align="center"
               color="#000000" 
-              position="-1.359 1.423 2.840" 
-              rotation="0 165 0"></a-text>
+              position="-1.618 1.423 4.928" 
+              rotation="0 150.06 0"></a-text>
               <!-- Cross Plane Televisión -->
               <a-image 
               visible="false" 
-              id="cross-television" 
+              id="cross-bicicleta" 
               src="assets/images/x-circle.png" 
               width=".2" 
               height=".2" 
-              position="-1.946 1.764 2.281" 
-              rotation="0 165 0" 
+              position="-1.569 1.708 3.651" 
+              rotation="0 150.06 0" 
               handle-events></a-image>
               
-      <a-camera><a-cursor fuse fuse-timeout="500"></a-cursor></a-camera>
+      <a-camera 
+      wasd-controls-enabled="false">
+      <a-cursor 
+      fuse fuse-timeout="500"
+      material="color: yellow;"></a-cursor></a-camera>
     </a-scene>
   </body>
 </html>
