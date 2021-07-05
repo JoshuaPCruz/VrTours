@@ -20,13 +20,13 @@ AFRAME.registerComponent('handle-events', {
       el.addEventListener('click', function () {
           switch (el.id) {
               case "arrow-first":
-                window.location.href = "http://127.0.0.1:8887/index.html"
+                window.location.href = "https://joshuapcruz.github.io/VrTours/"
                   break;
               case "arrow-second":
-                window.location.href = "http://127.0.0.1:8887/secondPage.html"
+                window.location.href = "https://joshuapcruz.github.io/VrTours/secondPage.html"
                   break;
               case "arrow-third":
-                window.location.href = "http://127.0.0.1:8887/thirdPage.html"
+                window.location.href = "https://joshuapcruz.github.io/VrTours//thirdPage.html"
                   break;
               case "bicicleta":
                 bici.setAttribute('visible', false);
