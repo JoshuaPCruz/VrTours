@@ -13,50 +13,77 @@
               <a-sky 
               src="assets/images/firstShot.jpg" 
               rotation="0 -130 0"></a-sky>
+              <!-- Modelo Bicicleta -->
               <a-obj-model 
               src="assets/assembled.obj" 
               mtl="assets/assembled.mtl" 
-              position="-3.192 1.097 2.639"
-              scale="0.70 0.70 0.70"></a-obj-model>
+              position="-2.795 1.097 2.058"
+              scale="0.70 0.70 0.70" 
+              animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-obj-model>
+              <!-- Texto Parque -->
               <a-text 
               font="kelsonsans" 
-              value="Parque Salesiano" 
+              value="Parque Salesiano"
+              color="#bf9a12"
+              transparent="false" 
               width="6" 
-              position="-1.362 0.728 -2.992"
-              rotation="13.636 15.350 3.418"></a-text>
+              position="-2.892 1.258 -1.765"
+              rotation="13.695 30.995 0.778"
+              ></a-text>
+              <a-image
+              id="arrow-second"
+              src="assets/images/arrow.png" 
+              width="1" 
+              height="1" 
+              position="1.570 1.646 -0.452" 
+              rotation="-1.434 -30.028 1.790" 
+              handle-events
+              ></a-image>
+
+              <!-- Circulo Estatua -->
               <a-entity 
-              id="peluches" 
+              id="estatua" 
               material="color: white; emissive: #ffffff;"
               geometry="primitive: circle; radius: .2;" 
               position="3.706 2.435 -4.340" 
               rotation="0 -48.124 0" 
               handle-events></a-entity>
+              <!-- Imagen Estatua -->
+              <a-image 
+              visible="false"
+              id="img-estatua" 
+              src="assets/images/felipeCarrillo.jpg" 
+              width="1" 
+              height="1" 
+              position="1.570 1.646 -0.729" 
+              rotation="0 -48.124 0" 
+              ></a-image>
               <a-image 
               visible="false" 
-              id="cross-peluches" 
+              id="cross-estatua" 
               src="assets/images/x-circle.png" 
               width=".2" 
               height=".2" 
-              position="-0.569 2.502 -1.491" 
-              rotation="0 -3.847 0" 
+              position="1.056 1.872 -1.845" 
+              rotation="0 -27.228 0" 
               handle-events></a-image>
               <a-text
-              id="text-peluches"
+              id="text-estatua"
               visible="false" 
               font="kelsonsans" 
-              value="Peluches \ny \nlibros" 
-              width="5"
+              value="El gobierno de Yucatan regalo esta\nescultura, que fue elaborada por Humberto\nPeraza. La imagen de Felipe Carrillo Puerto\nrepresenta los ideales de quintana Roo;\nfue conocido por las obras de tipo social y\neducativas, ademas del compromiso que\nsostuvo con los mayas contra los\nhacendados" 
+              width="1.690"
               align="center"
               color="#000000" 
-              position="-1.329 2.209 -1.491" 
-              rotation="0 -3.847 0"></a-text>
+              position="0.415 1.531 -2.410" 
+              rotation="0 -27.228 0"></a-text>
               <a-entity 
               visible="false" 
-              id="descripcion-peluches" 
+              id="descripcion-estatua" 
               material="color: white; emissive: #ffffff;"
               geometry="primitive: plane; height: 1; width:2" 
-              position="-1.5 2.25 -1.7" 
-              rotation="0 -3.847 0" 
+              position="0.415 1.531 -2.410" 
+              rotation="0 -27.228 0" 
               handle-events></a-entity>
 
               <!-- Circulo Bicicleta -->
@@ -85,7 +112,6 @@
               position="-2.532 1.470 2.933" 
               rotation="0 130.449 0"
               transparent="false"></a-text>
-
               <!-- Plane Info Bicicleta -->
               <a-entity
               visible="false"

@@ -2,10 +2,11 @@ AFRAME.registerComponent('handle-events', {
     init: function () {
       var el = this.el;  // <a-box>
       //const text = document.querySelector('a-text');
-      const desc_pel = document.querySelector('#descripcion-peluches');
-      const pel = document.querySelector('#peluches');
-      const cross_pel = document.querySelector('#cross-peluches');
-      const text_pel = document.querySelector('#text-peluches');
+      const desc_est = document.querySelector('#descripcion-estatua');
+      const est = document.querySelector('#estatua');
+      const img_est = document.querySelector('#img-estatua');
+      const cross_est = document.querySelector('#cross-estatua');
+      const text_est = document.querySelector('#text-estatua');
       const bici = document.querySelector('#bicicleta');
       const cross_bici = document.querySelector('#cross-bicicleta');
       const desc_bici = document.querySelector('#descripcion-bicicleta');
@@ -18,23 +19,34 @@ AFRAME.registerComponent('handle-events', {
     //   });
       el.addEventListener('click', function () {
           switch (el.id) {
+              case "arrow-first":
+                window.location.href = "http://127.0.0.1:8887/index.html"
+                  break;
+              case "arrow-second":
+                window.location.href = "http://127.0.0.1:8887/secondPage.html"
+                  break;
+              case "arrow-third":
+                window.location.href = "http://127.0.0.1:8887/thirdPage.html"
+                  break;
               case "bicicleta":
                 bici.setAttribute('visible', false);
                 desc_bici.setAttribute('visible', true);
                 cross_bici.setAttribute('visible', true);
                 text_bici.setAttribute('visible', true);
                   break;
-              case "peluches":
-                  pel.setAttribute('visible', false);
-                  desc_pel.setAttribute('visible', true);
-                  cross_pel.setAttribute('visible', true);
-                  text_pel.setAttribute('visible', true);
+              case "estatua":
+                  est.setAttribute('visible', false);
+                  img_est.setAttribute('visible', true);
+                  desc_est.setAttribute('visible', true);
+                  cross_est.setAttribute('visible', true);
+                  text_est.setAttribute('visible', true);
                   break;
-              case "cross-peluches":
-                  pel.setAttribute('visible', true);
-                  desc_pel.setAttribute('visible', false);
-                  cross_pel.setAttribute('visible', false);
-                  text_pel.setAttribute('visible', false);
+              case "cross-estatua":
+                  est.setAttribute('visible', true);
+                  img_est.setAttribute('visible', false);
+                  desc_est.setAttribute('visible', false);
+                  cross_est.setAttribute('visible', false);
+                  text_est.setAttribute('visible', false);
                   break;
               case "cross-bicicleta":
                   bici.setAttribute('visible', true);
