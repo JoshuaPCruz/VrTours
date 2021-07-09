@@ -1,152 +1,117 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>360&deg; Image</title>
-    <meta name="description" content="360&deg; Image - A-Frame">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <script src="js/aframe-master.js"></script>
-    <script src="js/components/handle-events.js"></script>
-  </head>
-  <body>
-    <a-scene>
-              <a-sky 
-              src="assets/images/firstShot.jpg" 
-              rotation="0 -130 0"></a-sky>
-              <!-- Modelo Bicicleta -->
-              <a-obj-model 
-              src="assets/assembled.obj" 
-              mtl="assets/assembled.mtl" 
-              position="-2.795 1.097 2.058"
-              scale="0.70 0.70 0.70" 
-              animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-obj-model>
-              <!-- Texto Parque -->
-              <a-text 
-              font="kelsonsans" 
-              value="Parque Salesiano"
-              color="#bf9a12"
-              transparent="false" 
-              width="6" 
-              position="-2.892 1.258 -1.765"
-              rotation="13.695 30.995 0.778"
-              ></a-text>
-              <a-image
-              id="arrow-second"
-              src="assets/images/arrow.png" 
-              width="1" 
-              height="1" 
-              position="1.570 1.646 1.384" 
-              rotation="-3.002 50.573 -0.116" 
-              handle-events
-              ></a-image>
 
-              <!-- Circulo Estatua -->
-              <a-entity 
-              id="estatua" 
-              material="color: white; emissive: #ffffff;"
-              geometry="primitive: circle; radius: .2;" 
-              position="3.706 2.435 -4.340" 
-              rotation="0 -48.124 0" 
-              handle-events></a-entity>
-              <!-- Imagen Estatua -->
-              <a-image 
-              visible="false"
-              id="img-estatua" 
-              src="assets/images/felipeCarrillo.jpg" 
-              width="1" 
-              height="1" 
-              position="1.570 1.646 -0.729" 
-              rotation="0 -48.124 0" 
-              ></a-image>
-              <a-image 
-              visible="false" 
-              id="cross-estatua" 
-              src="assets/images/x-circle.png" 
-              width=".2" 
-              height=".2" 
-              position="1.056 1.872 -1.845" 
-              rotation="0 -27.228 0" 
-              handle-events></a-image>
-              <a-text
-              id="text-estatua"
-              visible="false" 
-              font="kelsonsans" 
-              value="El gobierno de Yucatan regalo esta\nescultura, que fue elaborada por Humberto\nPeraza. La imagen de Felipe Carrillo Puerto\nrepresenta los ideales de quintana Roo;\nfue conocido por las obras de tipo social y\neducativas, ademas del compromiso que\nsostuvo con los mayas contra los\nhacendados" 
-              width="1.690"
-              align="center"
-              color="#000000" 
-              position="0.415 1.531 -2.410" 
-              rotation="0 -27.228 0"></a-text>
-              <a-entity 
-              visible="false" 
-              id="descripcion-estatua" 
-              material="color: white; emissive: #ffffff;"
-              geometry="primitive: plane; height: 1; width:2" 
-              position="0.415 1.531 -2.410" 
-              rotation="0 -27.228 0" 
-              handle-events></a-entity>
+<head>
+  <meta charset="utf-8">
+  <title>Parque Climático</title>
+  <meta name="description" content="360&deg; Image - A-Frame">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <script src="js/aframe-master.js"></script>
+  <script
+    src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="js/components/handle-events.js"></script>
+</head>
 
-              <!-- Circulo Bicicleta -->
-              <a-entity 
-              id="bicicleta" 
-              material="color: white; emissive: #ffffff;"
-              geometry="primitive: circle; radius: .07" 
-              position="-0.433 1.555 1.269" 
-              rotation="0 165 0" 
-              handle-events></a-entity>
-              <!-- Plane Fondo Bicicleta -->
-              <a-entity
-              id="fondo-bicicleta" 
-              material="color: red; emissive: #05f579;" 
-              geometry="primitive: plane; height: 1; width:2" 
-              position="-3.413 1.433 3.423" 
-              rotation="0 125.743 0" 
-              handle-events></a-entity>
-              <!-- Text Bicicleta -->
-              <a-text
-              font="kelsonsans" 
-              value="Curso \nde \nbicicleta" 
-              width="5"
-              align="center"
-              color="#36a527" 
-              position="-2.532 1.470 2.933" 
-              rotation="0 130.449 0"
-              transparent="false"></a-text>
-              <!-- Plane Info Bicicleta -->
-              <a-entity
-              visible="false"
-              id="descripcion-bicicleta" 
-              material="color: red; emissive: white;" 
-              geometry="primitive: plane; height: 1.07; width:2.2" 
-              position="-1.618 1.433 5.267" 
-              rotation="0 150.06 0" 
-              handle-events></a-entity>
-              <a-text
-              id="text-bicicleta"
-              visible="false" 
-              font="kelsonsans" 
-              value="Sabado y Domingo \n\n55-11-22-33-44 " 
-              width="4.2"
-              align="center"
-              color="#000000" 
-              position="-1.618 1.433 5.267" 
-              rotation="0 150.06 0"></a-text>
-              <!-- Cross Info Bicicleta -->
-              <a-image 
-              visible="false" 
-              id="cross-bicicleta" 
-              src="assets/images/x-circle.png" 
-              width=".2" 
-              height=".2" 
-              position="-1.889 1.761 3.651" 
-              rotation="0 150.06 0" 
-              handle-events></a-image>
-              
-      <a-camera 
-      wasd-controls-enabled="false">
-      <a-cursor 
-      fuse fuse-timeout="500"
-      material="color: yellow;"></a-cursor></a-camera>
-    </a-scene>
-  </body>
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
+      <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg"
+        crossorigin="anonymous" />
+        <img id="groundTexture" src="assets/grassTexture.jpeg">
+      <a-asset-item id="fox" src="assets/azeria/source/Fox.glb"></a-asset-item>
+      <a-asset-item id="trees" src="assets/low_poly_trees/scene.gltf"></a-asset-item>
+      <a-asset-item id="fence" src="assets/fence_wood/scene.gltf"></a-asset-item>
+      <a-asset-item id="bears" src="assets/we_bare_bears/scene.gltf"></a-asset-item>
+    </a-assets>
+    
+    <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+    <a-entity id="light" light="type: ambient; color: #888"></a-entity>
+    <a-entity id="particles" particle-system="preset: snow"></a-entity>
+    <a-entity id="ocean" ocean="density: 20; width: 40; depth: 20; speed: 4" position="-31.476 0.665 1.183"
+      material="color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1" rotation="-90 0 0"></a-entity>
+      <a-cylinder id="ground" src="#groundTexture" radius="37" height="1.2"></a-cylinder>
+
+
+    <!-- Modelos -->
+    <a-entity id="fox" gltf-model="#fox" animation-mixer=" clip: Survey" scale="0.01 0.01 0.01" position="-5 0.616 0" rotation="0 58.598 0"></a-entity>
+    <a-entity id="bears" gltf-model="#bears" position="4.334 1.400 -2.976" scale="0.1 0.1 0.1" ></a-entity>
+    <a-entity id="fence" gltf-model="#fence" scale="0.5 0.5 0.5" position="-8.954 0.616 2.391" rotation="0 -26.502 0"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" scale="0.5 0.5 0.5" position="-8.954 0.616 -3.429" rotation="0 -26.502 0"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" scale="0.5 0.5 0.5" position="-8.954 0.616 0.495" rotation="0 -26.502 0"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" scale="0.5 0.5 0.5" position="-8.954 0.616 -1.451" rotation="0 -26.502 0"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="0 0 -10"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="-4 0 -10"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="4 0 -10"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="5 0 -10"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="0 0 -15"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="-5 0 -15"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="4 0 -15"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="5 0 -15"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="0 0 5"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="-4 0 5"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="4 0 5"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="5 0 5"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="15 0 4"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="15 0 5"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="15 0 3"></a-entity>
+    <a-entity gltf-model="#trees" scale="0.8 0.8 0.8" position="15 0 2"></a-entity>
+    <!-- Text parq -->
+    <a-text font="kelsonsans" value="Parque Climatico" color="#bf9a12" transparent="false" width="6"
+      position="-2.037 1.258 -1.355" rotation="13.695 21.566 0.778"></a-text>
+
+    <a-text font="kelsonsans" value="Escoge tu clima" width="5" align="center" color="#36a527"
+      position="6.520 2.235 0.3" rotation="0 -90 0" transparent="false"></a-text>
+
+    <!-- Rain -->
+    <a-entity id="rain" material="color: white; emissive: #ffffff;" geometry="primitive: circle; radius: .2;"
+      position="6.520 1.435 -1.118" rotation="0 -58.197 0" handle-events></a-entity>
+    <a-text id="text-rain" font="kelsonsans"
+      value="Lluvia"
+      width="1.690" align="center" color="#000000" position="6.520 1.435 -1.118" rotation="0 -58.197 0"></a-text>
+
+
+      <!-- Snow -->
+    <a-entity id="snow" material="color: white; emissive: #ffffff;" geometry="primitive: circle; radius: .2;"
+      position="6.520 1.435 0.3" rotation="0 -90 0" handle-events></a-entity>
+    <a-text id="text-snow" font="kelsonsans"
+      value="Nieve"
+      width="1.690" align="center" color="#000000" position="6.520 1.435 0.3" rotation="0 -90 0"></a-text>
+
+
+      <!-- Dust -->
+    <a-entity id="dust" material="color: white; emissive: #ffffff;" geometry="primitive: circle; radius: .2;"
+      position="6.520 1.435 1.8" rotation="0 -98 0" handle-events></a-entity>
+    <a-text id="text-dust" font="kelsonsans"
+      value="Polvo"
+      width="1.690" align="center" color="#000000" position="6.520 1.435 1.8" rotation="0 -98 0"></a-text>
+
+    <!-- Circulo Bicicleta -->
+    <a-entity id="bicicleta" material="color: white; emissive: #ffffff;" geometry="primitive: circle; radius: .07"
+      position="-0.433 1.555 1.269" rotation="0 165 0" handle-events></a-entity>
+    <!-- Plane Fondo Bicicleta -->
+    <a-entity id="fondo-bicicleta" material="color: red; emissive: #05f579;"
+      geometry="primitive: plane; height: 1; width:2" position="-3.413 1.433 3.423" rotation="0 125.743 0"
+      handle-events></a-entity>
+    <!-- Text Bicicleta -->
+    <a-text font="kelsonsans" value="Creditos" width="5" align="center" color="#36a527"
+      position="-2.532 1.470 2.933" rotation="0 130.449 0" transparent="false"></a-text>
+    <!-- Plane Info Bicicleta -->
+    <a-entity visible="false" id="descripcion-bicicleta" material="color: red; emissive: white;"
+      geometry="primitive: plane; height: 1.07; width:2.2" position="-1.618 1.433 5.267" rotation="0 150.06 0"
+      handle-events></a-entity>
+    <a-text id="text-bicicleta" visible="false" font="kelsonsans" value="Cesar Joshua \n Pedraza Cruz\n 2015601656"
+      width="4.2" align="center" color="#000000" position="-1.618 1.433 5.267" rotation="0 150.06 0"></a-text>
+    <!-- Cross Info Bicicleta -->
+    <a-image visible="false" id="cross-bicicleta" src="assets/images/x-circle.png" width=".2" height=".2"
+      position="-1.889 1.761 3.651" rotation="0 150.06 0" handle-events></a-image>
+
+    <a-camera>
+      <a-cursor fuse fuse-timeout="500" material="color: yellow;"></a-cursor>
+    </a-camera>
+  </a-scene>
+</body>
+
 </html>

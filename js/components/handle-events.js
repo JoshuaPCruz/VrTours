@@ -2,7 +2,7 @@ AFRAME.registerComponent('handle-events', {
     init: function () {
       var el = this.el;  // <a-box>
       //const text = document.querySelector('a-text');
-      const desc_est = document.querySelector('#descripcion-estatua');
+      const particles = document.querySelector('#particles');
       const est = document.querySelector('#estatua');
       const img_est = document.querySelector('#img-estatua');
       const cross_est = document.querySelector('#cross-estatua');
@@ -19,34 +19,29 @@ AFRAME.registerComponent('handle-events', {
     //   });
       el.addEventListener('click', function () {
           switch (el.id) {
-              case "arrow-first":
-                window.location.href = "https://joshuapcruz.github.io/VrTours/"
+              case "rain":
+                particles.setAttribute('particle-system', "preset:rain");
                   break;
-              case "arrow-second":
-                window.location.href = "https://joshuapcruz.github.io/VrTours/secondPage.html"
+              case "text-rain":
+                particles.setAttribute('particle-system', "preset:rain");
                   break;
-              case "arrow-third":
-                window.location.href = "https://joshuapcruz.github.io/VrTours//thirdPage.html"
+              case "snow":
+                particles.setAttribute('particle-system', "preset:snow");
+                  break;
+              case "text-snow":
+                particles.setAttribute('particle-system', "preset:snow");
+                  break;
+              case "dust":
+                particles.setAttribute('particle-system', "preset:dust");
+                  break;
+              case "text-dust":
+                particles.setAttribute('particle-system', "preset:dust");
                   break;
               case "bicicleta":
                 bici.setAttribute('visible', false);
                 desc_bici.setAttribute('visible', true);
                 cross_bici.setAttribute('visible', true);
                 text_bici.setAttribute('visible', true);
-                  break;
-              case "estatua":
-                  est.setAttribute('visible', false);
-                  img_est.setAttribute('visible', true);
-                  desc_est.setAttribute('visible', true);
-                  cross_est.setAttribute('visible', true);
-                  text_est.setAttribute('visible', true);
-                  break;
-              case "cross-estatua":
-                  est.setAttribute('visible', true);
-                  img_est.setAttribute('visible', false);
-                  desc_est.setAttribute('visible', false);
-                  cross_est.setAttribute('visible', false);
-                  text_est.setAttribute('visible', false);
                   break;
               case "cross-bicicleta":
                   bici.setAttribute('visible', true);
